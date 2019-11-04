@@ -21,7 +21,11 @@ Color::Color(int _r, int _g, int _b, float _a) :
 	m_A(std::clamp(_a, ALPHA_MIN, ALPHA_MAX))
 {}
 
-Color::Color(float _r, float _g, float _b, float _a) : m_R((float)_r), m_G((float)_g), m_B((float)_b), m_A(_a)
+Color::Color(float _r, float _g, float _b, float _a) :
+		m_R(static_cast<float>(_r)),
+		m_G(static_cast<float>(_g)),
+		m_B(static_cast<float>(_b)),
+		m_A(_a)
 {}
 
 Color::Color(const Color & _other) : Color(_other.m_R, _other.m_G, _other.m_B, _other.m_A)

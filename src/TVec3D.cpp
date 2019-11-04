@@ -8,7 +8,7 @@ TVec3D::TVec3D() : m_X(0.0f), m_Y(0.0f), m_Z(0.0f)
 TVec3D::TVec3D(float _x, float _y, float _z) : m_X(_x), m_Y(_y), m_Z(_z)
 {}
 
-TVec3D::TVec3D(int _x, int _y, int _z) : TVec3D((float) _x, (float) _y, (float) _z)
+TVec3D::TVec3D(int _x, int _y, int _z) : TVec3D(static_cast<float>(_x), static_cast<float>(_y), static_cast<float>(_z))
 {}
 
 TVec3D::TVec3D(const TVec3D & _other) : TVec3D(_other.m_X, _other.m_Y, _other.m_Z)
